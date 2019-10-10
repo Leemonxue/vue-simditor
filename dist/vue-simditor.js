@@ -158,13 +158,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mounted: function mounted() {
 	    var _this = this;
 
-	    console.log((0, _assign2.default)({}, {
-	      textarea: (0, _jquery2.default)('#editor')
-	    }, this.options));
 	    this.editor = new _simditor2.default((0, _assign2.default)({}, {
 	      textarea: (0, _jquery2.default)('#editor')
 	    }, this.options));
-
+        this.editor.setValue(this.content)
 	    this.editor.on('valuechanged', function (e, src) {
 	      _this.valueChange(e, src);
 	    });

@@ -37,13 +37,10 @@
 
     mounted() {
       /* eslint-disable no-new */
-      console.log(Object.assign({}, {
-        textarea: $('#editor')
-      }, this.options))
       this.editor = new Simditor(Object.assign({}, {
         textarea: $('#editor')
       }, this.options))
-
+      this.editor.setValue(this.content)
       this.editor.on('valuechanged', (e, src) => {
         this.valueChange(e, src)
       })
